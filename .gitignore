@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # rcov generated
 coverage
 coverage.data
@@ -47,3 +48,23 @@ pkg
 
 # For rubinius:
 #*.rbc
+=======
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+
+# YARD artifacts
+.yardoc
+_yardoc
+doc/
+>>>>>>> 1b05b193bddd3be6787dfc2c5b845b522c83aaa4
