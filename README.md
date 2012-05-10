@@ -3,7 +3,7 @@
 
 ##What is it
 
-A Ruby gem to easy use [Ogone](www.ogone.com) online payments service
+A Ruby gem to easy use [Ogone](http://www.ogone.com) online payments service
 
 
 ##Usage
