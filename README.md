@@ -12,7 +12,7 @@ A Ruby gem to easy use [Ogone](http://www.ogone.com) online payments service
 	gem install ogone-rails
 
 ### Configuration
-Define in:
+Define:
 
 * PSPID
 * currency
