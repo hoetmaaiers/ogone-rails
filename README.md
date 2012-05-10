@@ -2,7 +2,6 @@
 
 
 ##What is it
----
 
 A Ruby gem to easy use [Ogone](www.ogone.com) online payments service
 
