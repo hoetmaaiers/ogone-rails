@@ -72,3 +72,6 @@ The returned values are made much more readable then Ogone's naming:
 		"brand" => "VISA",
 		"sha_sign" => "51AF71351E79DD0186816289AD53C57213978E32"
 	}
+	
+### Copyright
+Copyright &copy; 2012 Robin Houdmeyers
