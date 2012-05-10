@@ -5,26 +5,33 @@
 
 Gem::Specification.new do |s|
   s.name = "ogone-rails"
-  s.version = "0.1.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Robin Houdmeyers"]
-  s.date = "2012-05-09"
-  s.description = "Add Ogone payments functionality to a Rails application"
+  s.date = "2012-05-10"
+  s.description = "Add Ogone payments functionality to your Rails application"
   s.email = "houdmeyers@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
+    "README.md",
     "README.rdoc"
   ]
   s.files = [
     ".document",
     "Gemfile",
+    "Gemfile.lock",
     "LICENSE.txt",
+    "README.md",
     "README.rdoc",
     "Rakefile",
     "VERSION",
     "lib/ogone-rails.rb",
-    "lib/ogone-rails/config.rb"
+    "lib/ogone-rails/config.rb",
+    "lib/ogone-rails/helpers.rb",
+    "lib/ogone-rails/rails.rb",
+    "lib/ogone-rails/string_to_hash.rb",
+    "ogone-rails.gemspec",
     "test/helper.rb",
     "test/test_ogone-rails.rb"
   ]
