@@ -7,7 +7,6 @@ A Ruby gem to easy use [Ogone](www.ogone.com) online payments service
 
 
 ##Usage
----
 
 ### Installation
 	gem install ogone-rails
