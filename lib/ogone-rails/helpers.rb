@@ -5,11 +5,7 @@ module OgoneRails
     def ogone_form options={}
       form = ""
       
-      if OgoneRails::mode == "live"
-        action = OgoneRails::LIVE_SERVICE_URL
-      else
-        action = OgoneRails::TEST_SERVICE_URL
-      end
+      OgoneRails::mode == "live" ? action = OgoneRails::LIVE_SERVICE_URL : action = OgoneRails::TEST_SERVICE_URL
       
       form << "<form method='post' action='#{action}'>\n"
       
