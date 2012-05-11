@@ -10,7 +10,7 @@ module OgoneRails
     
     def generate_sha_in
       @params.sort.each do |key, value|
-        @sha_in_phrase << "#{key.upcase}=#{value}#{OgoneRails::Config.sha_in}"
+        @sha_in_phrase << "#{key.upcase}=#{value}#{OgoneRails::sha_in}"
       end
       
       Digest::SHA1.hexdigest(@sha_in_phrase).upcase

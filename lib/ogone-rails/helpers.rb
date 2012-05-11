@@ -5,23 +5,25 @@ module OgoneRails
     def ogone_form options={}
       form = ""
       
-      if OgoneRails::Config.debug
-        form = "<form method='post' action='#{OgoneRails::Config::TEST_SERVICE_URL}'>\n"
+      if OgoneRails::mode == "live"
+        action = OgoneRails::LIVE_SERVICE_URL
       else
-        form = "<form method='post' action='#{OgoneRails::Config::LIVE_SERVICE_URL}'>\n"
+        action = OgoneRails::TEST_SERVICE_URL
       end
+      
+      form << "<form method='post' action='#{action}'>\n"
       
       # REQUIRED VALUES
       StringToHash::reset
       # pspid
-      form << "\t<input type='hidden' name='PSPID' value='#{OgoneRails::Config.pspid}'>\n"
-      StringToHash::add_parameter 'PSPID', OgoneRails::Config.pspid
+      form << "\t<input type='hidden' name='PSPID' value='#{OgoneRails::pspid}'>\n"
+      StringToHash::add_parameter 'PSPID', OgoneRails::pspid
       # currency
-      form << "\t<input type='hidden' name='currency' value='#{OgoneRails::Config.currency}'>\n"
-      StringToHash::add_parameter 'currency', OgoneRails::Config.currency
+      form << "\t<input type='hidden' name='currency' value='#{OgoneRails::currency}'>\n"
+      StringToHash::add_parameter 'currency', OgoneRails::currency
       # language
-      form << "\t<input type='hidden' name='language' value='#{OgoneRails::Config.language}'>\n"
-      StringToHash::add_parameter 'language', OgoneRails::Config.language
+      form << "\t<input type='hidden' name='language' value='#{OgoneRails::language}'>\n"
+      StringToHash::add_parameter 'language', OgoneRails::language
       
       
       
