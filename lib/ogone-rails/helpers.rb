@@ -28,35 +28,45 @@ module OgoneRails
       # OPTIONAL VALUES
       options.each do |option, value|
         case option
+        
         when :order_id
           form << "\t<input type='hidden' name='orderID' value='#{value}'>\n"
           StringToHash::add_parameter 'orderID', value
+          
         when :amount
           #amount 15.00 -> 1500
           value = (value.to_f * 100).to_i
           form << "\t<input type='hidden' name='amount' value='#{value}'>\n"
           StringToHash::add_parameter 'amount', value
+          
         when :customer_name
           form << "\t<input type='hidden' name='CN' value='#{value}'>\n"
           StringToHash::add_parameter 'CN', value
+          
         when :customer_email
           form << "\t<input type='hidden' name='EMAIL' value='#{value}'>\n"
           StringToHash::add_parameter 'EMAIL', value
+          
         when :customer_address
           form << "\t<input type='hidden' name='owneraddress' value='#{value}'>\n"
           StringToHash::add_parameter 'owneraddress', value
+          
         when :customer_zip
           form << "\t<input type='hidden' name='ownerZIP' value='#{value}'>\n"
           StringToHash::add_parameter 'ownerZIP', value
+          
         when :customer_city
           form << "\t<input type='hidden' name='ownertown' value='#{value}'>\n"
           StringToHash::add_parameter 'ownertown', value
+          
         when :customer_country
           form << "\t<input type='hidden' name='ownercty' value='#{value}'>\n"          
           StringToHash::add_parameter 'ownercty', value
+          
         when :customer_phone
           form << "\t<input type='hidden' name='ownertelno' value='#{value}'>\n"
           StringToHash::add_parameter 'ownertelno', value
+          
         else
           form << "\t<input type='hidden' name='#{option}' value='#{value}'>\n"
         end

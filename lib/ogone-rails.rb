@@ -34,7 +34,7 @@ module OgoneRails
     if sha_check == sha_sign
       # return values in readable format
       {
-        'order_id' => feedback['orderID'],
+        'order_id' => feedback['orderID'].to_s,
         'amount' => feedback['amount'],
         'currency' => feedback['currency'],
         'payment_method' => feedback['PM'],
