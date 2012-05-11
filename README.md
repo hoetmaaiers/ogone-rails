@@ -37,7 +37,7 @@ Generate an **ogone_form**
 
 	ogone_form({
     	:order_id => 12345, 
-    	:amount => "299.99", 
+    	:amount => 299.99, 
     	:customer_name => "Jan Janssen",
     	:customer_email => "jan@email.com",
    		:customer_address => "highstreet 101",
