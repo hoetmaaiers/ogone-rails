@@ -38,6 +38,7 @@ Define:
 Generate an **ogone_form**:
 
 	ogone_form({
+		#transaction information
     	:order_id => 12345, 
     	:amount => 299.99, 
     	:customer_name => "Jan Janssen",
@@ -46,8 +47,25 @@ Generate an **ogone_form**:
    		:customer_zip => "1000",
     	:customer_city => "Brussel",
     	:customer_country => "Belgium",
-    	:customer_phone => "0412345678"
- 	 })
+    	:customer_phone => "0412345678",
+    	
+    	# feedback url's
+    	:accept_url => "www.example.com/ogone/accept",
+    	:decline_url => "www.example.com/ogone/decline",
+    	:exception_url => "www.example.com/ogone/exception",
+    	:cancel_url => "www.example.com/ogone/cancel",
+    	
+    	# look and feel
+    	:title => "lorem ipsum",
+    	:bg_color => "FFFFFF",
+    	:text_color => "000000"
+    	:table_bg_color => "000000"
+    	:table_text_color => "000000"    	
+    	:button_bg_color => "CCCCCC"
+    	:button_text_color => "000000"
+    	:font_family => "Helvetica"
+    	:logo => "www.example.com/images/logo.png"
+   	})
 
 ### Check Ogone feedback
 
