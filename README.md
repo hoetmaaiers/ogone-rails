@@ -61,11 +61,11 @@ Check valid authorization:
 	@check.valid?
 	#return true or false
 
-Get parameters, returned in a hash format. The keys are renamed to be much more readable:
+Get parameters:
 	
 	@check.get_parameters
 	
-… will return …
+… returns the Ogone feedback in a hash format. The keys are made more readable then Ogone provides them: …
 
 	{
 		"order_id" => "46185", 
