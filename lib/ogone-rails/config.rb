@@ -1,4 +1,5 @@
 module OgoneRails
+  extend self
   
   TEST_SERVICE_URL = 'https://secure.ogone.com/ncol/test/orderstandard.asp'
   LIVE_SERVICE_URL = 'https://secure.ogone.com/ncol/prod/orderstandard.asp'  
