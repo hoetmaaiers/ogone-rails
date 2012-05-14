@@ -1,8 +1,10 @@
 module OgoneRails
-  module StringToHash
-    extend self
-    @params = {}
-    @sha_in_phrase = ""
+  class StringToHash
+    
+    def initialize
+      @params = {}
+      @sha_in_phrase = ""
+    end
     
     def add_parameter key, value
       @params[key.upcase] = value
@@ -20,14 +22,7 @@ module OgoneRails
       
     end
     
-    def self.params
-      @params
-    end
-    
-    def self.sha_in_phrase
-      @sha_in_phrase
-    end
-    
+    # unused since Module transformed to Class
     def reset
       @sha_in_phrase = ""
       @params = {}
