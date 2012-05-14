@@ -3,7 +3,7 @@
 
 ##What is it
 
-A Ruby gem to easy use [Ogone](http://www.ogone.com) online payments service
+A Ruby gem to simplify the use of [Ogone](http://www.ogone.com) online payments service.
 
 
 ##Usage
@@ -15,21 +15,23 @@ A Ruby gem to easy use [Ogone](http://www.ogone.com) online payments service
 Define:
 
 * PSPID
-* currency
-* language
 * sha_in
-* sha_out 
-* debug (default = true)
+* sha_out
+* currency | default: "EUR"
+* language | default: "nl_NL"
+* test | default = "live"
+
 
 
 		# config/initializers/ogone-rails.rb
 		
-		OgoneRails::Config.pspid = "myPSPID"
-		OgoneRails::Config.currency = "EUR"
-		OgoneRails::Config.language = "nl_NL"
-		OgoneRails::Config.sha_in = "********************************"
-		OgoneRails::Config.sha_out = "********************************"
-		OgoneRails::Config.debug = true
+		OgoneRails::config ({
+		  :pspid => "myPSPID",
+		  :sha_in => "0123456789abcdefghijklmnopqrstuv",
+		  :sha_out => "vutsrqponmlkjihgfedcba9876543210",
+		  :mode => "test""
+		})
+
 
 
 ### Helpers
@@ -49,13 +51,21 @@ Generate an **ogone_form**
 
 ### Check Ogone feedback
 
-Check the accept feedback Ogone sends you:
-	
-	# app/controllers/feedback_controller.rb
-	@check = OgoneRails::check_auth( request.GET )
+Create a new object to check the feedback Ogone gives you:
 
-On **true** a hash with all parameters returned. On **false** the check returns false.
-The returned values are made much more readable then Ogone's naming:
+	# app/controllers/feedback_controller.rb
+    @check = OgoneRails::CheckAuth.new( request.GET )
+
+Check valid authorization:
+	
+	@check.valid?
+	#return true or false
+
+Get parameters, returned in a hash format. The keys are renamed to be much more readable:
+	
+	@check.get_parameters
+	
+… will return:
 
 	{
 		"order_id" => "46185", 
