@@ -35,7 +35,7 @@ Define:
 
 
 ### Helpers
-Generate an **ogone_form**
+Generate an **ogone_form**:
 
 	ogone_form({
     	:order_id => 12345, 
@@ -65,7 +65,7 @@ Get parameters, returned in a hash format. The keys are renamed to be much more 
 	
 	@check.get_parameters
 	
-… will return:
+… will return …
 
 	{
 		"order_id" => "46185", 
