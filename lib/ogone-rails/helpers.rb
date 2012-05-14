@@ -27,6 +27,10 @@ module OgoneRails
       options.each do |option, value|
         case option
         
+        
+        # ------------------
+        # General parameters
+        
         when :order_id
           form << "\t<input type='hidden' name='orderID' value='#{value}'>\n"
           StringToHash::add_parameter 'orderID', value
@@ -64,7 +68,28 @@ module OgoneRails
         when :customer_phone
           form << "\t<input type='hidden' name='ownertelno' value='#{value}'>\n"
           StringToHash::add_parameter 'ownertelno', value
+        
+        
+        # --------------
+        # Feedback url's
+        
+        when :accept_url
+          form << "\t<input type='hidden' name='accepturl' value='#{value}'>\n"
+          StringToHash::add_parameter 'accepturl', value
           
+        when :decline_url
+          form << "\t<input type='hidden' name='declineurl' value='#{value}'>\n"
+          StringToHash::add_parameter 'declineurl', value
+        
+        when :exception_url
+          form << "\t<input type='hidden' name='exceptionurl' value='#{value}'>\n"
+          StringToHash::add_parameter 'exceptionurl', value
+          
+        when :cancel_url
+          form << "\t<input type='hidden' name='cancelurl' value='#{value}'>\n"
+          StringToHash::add_parameter 'cancelurl', value
+        
+        
         else
           form << "\t<input type='hidden' name='#{option}' value='#{value}'>\n"
         end
