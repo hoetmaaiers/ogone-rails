@@ -1,5 +1,6 @@
 module OgoneRails
   class StringToHash
+    attr_accessor :sha_in_phrase
     
     def initialize
       @params = {}

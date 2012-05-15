@@ -58,13 +58,16 @@ Generate an **ogone_form**:
     	# look and feel
     	:title => "lorem ipsum",
     	:bg_color => "FFFFFF",
-    	:text_color => "000000"
-    	:table_bg_color => "000000"
-    	:table_text_color => "000000"    	
-    	:button_bg_color => "CCCCCC"
-    	:button_text_color => "000000"
-    	:font_family => "Helvetica"
-    	:logo => "www.example.com/images/logo.png"
+    	:text_color => "000000",
+    	:table_bg_color => "000000",
+    	:table_text_color => "000000",    	
+    	:button_bg_color => "CCCCCC",
+    	:button_text_color => "000000",
+    	:font_family => "Helvetica",
+    	:logo => "www.example.com/images/logo.png",
+    	
+    	# default ogone parameter
+    	'PARAM' => "example"
    	})
 
 ### Check Ogone feedback

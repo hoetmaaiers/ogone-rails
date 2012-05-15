@@ -138,11 +138,14 @@ module OgoneRails
         
         else
           form.add_input(option, value)
+          hash.add_parameter(option, value)
         end
       end
       
       # shasign
       sha_in = hash.generate_sha_in
+      form.add_input('sha_phrase', hash.sha_in_phrase)
+      
       form.add_input('SHASign', sha_in)
 
       form.get_form
@@ -164,7 +167,7 @@ module OgoneRails
 
     
       def get_form
-        @form << "\t<input type='submit' value='ga verder naar ogone' id='submit2' name='submit2'>\n"
+        @form << "\t<input type='submit' value='ga verder naar ogones' id='submit2' name='submit2'>\n"
         @form << "</form>"
         @form.html_safe
       end
