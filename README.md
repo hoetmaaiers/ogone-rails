@@ -72,7 +72,7 @@ Generate an **ogone_form**:
 Create a new object to check the feedback Ogone gives you:
 
 	# app/controllers/feedback_controller.rb
-    @check = OgoneRails::CheckAuth.new( request.GET )
+    @check = OgoneRails::CheckAuth.new( request )
 
 Check valid authorization:
 	

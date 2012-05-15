@@ -3,7 +3,7 @@ module OgoneRails
   class CheckAuth 
     
     def initialize request
-      @request = request
+      @request = request.GET
       @params = {}
       get_params
     end
