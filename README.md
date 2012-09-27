@@ -10,27 +10,47 @@ A Ruby gem to simplify the use of [Ogone](http://www.ogone.com) online payments 
 
 ### Installation
 	gem install ogone-rails
+	# or include in a gemfile
+	gem 'ogone-rails'
 
 ### Configuration
-Define:
+Define ogone parameters in a yaml config file:
+		
+		# config/ogone.yml
+		development:
+  			pspid: "hoetmaaiers"
+  			sha_in: "0123456789abcdefghijklmnopqrstuv"
+  			sha_out: "vutsrqponmlkjihgfedcba9876543210"
+  			currency: "EUR"
+  			language: "nl_NL"
+  			mode: 'test'
+  		production:
+  			pspid: "hoetmaaiers"
+  			sha_in: "0123456789abcdefghijklmnopqrstuv"
+  			sha_out: "vutsrqponmlkjihgfedcba9876543210"
+  			currency: "EUR"
+  			language: "nl_NL"
+  			mode: 'live'
+
+Configure ogone-rails in an initializer:
+		
+		# initializers/ogone.rb
+		ogone_config = YAML.load_file('config/ogone.yml')[Rails.env].symbolize_keys
+		OgoneRails::config (ogone_config)
+		
+
+#### Parameters	
+__required__
 
 * PSPID
 * sha_in
 * sha_out
-* currency | default: "EUR"
-* language | default: "nl_NL"
-* test | default = "live"
 
+__optional__
 
-
-		# config/initializers/ogone-rails.rb
-		
-		OgoneRails::config ({
-		  :pspid => "myPSPID",
-		  :sha_in => "0123456789abcdefghijklmnopqrstuv",
-		  :sha_out => "vutsrqponmlkjihgfedcba9876543210",
-		  :mode => "test""
-		})
+* currency,  _default: "EUR"_
+* language, _default: "nl_NL"_
+* mode, _default = "live"_
 
 
 
