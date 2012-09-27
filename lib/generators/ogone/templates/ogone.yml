@@ -1,5 +1,5 @@
 development:
-  pspid: "hoetmaaiers"
+  pspid: "example"
   sha_in: "0123456789abcdefghijklmnopqrstuv"
   sha_out: "vutsrqponmlkjihgfedcba9876543210"
   currency: "EUR"
@@ -7,17 +7,17 @@ development:
   mode: 'test'
   
 test:
-  pspid: "hoetmaaiers"
-  sha_in: "0adf357fd192d7257cd298d9ccb55a29"
-  sha_out: "92a55bcc9d892dc7527d291df753fda0"
+  pspid: "example"
+  sha_in: "0123456789abcdefghijklmnopqrstuv"
+  sha_out: "vutsrqponmlkjihgfedcba9876543210"
   currency: "EUR"
   language: "nl_NL"
   mode: 'test'
   
 production:
-  pspid: "hoetmaaiers"
-  sha_in: "0adf357fd192d7257cd298d9ccb55a29"
-  sha_out: "92a55bcc9d892dc7527d291df753fda0"
+  pspid: "example"
+  sha_in: "0123456789abcdefghijklmnopqrstuv"
+  sha_out: "vutsrqponmlkjihgfedcba9876543210"
   currency: "EUR"
   language: "nl_NL"
   mode: 'live'
