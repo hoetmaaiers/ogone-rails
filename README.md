@@ -131,5 +131,38 @@ Get parameters:
 		"sha_sign" => "51AF71351E79DD0186816289AD53C57213978E32"
 	}
 	
+### Helper use for Subscrioptions billing after every end of Month
+
+<%= ogone_form ({
+         :order_id => 123456,
+         :amount => 2.99,
+         :customer_name => 'Jan Jansdfsdfssen',
+         :customer_email => 'jsdfsdfan@email.com',
+         :customer_address => 'highstreet 101',
+         :customer_zip => '1000',
+         :customer_city => 'Brussel',
+         :customer_country => 'Belgium',
+         :customer_phone => '0412345678',
+
+
+        :subscription_id => '452343',
+        :sub_amount => '49',
+        :sub_com => '23423423',
+        :sub_orderid => '2343243',
+        :sub_period_unit => 'm',
+        :sub_period_number => '1',
+        :sub_period_moment => '31',
+        :sub_startdate => '2012-09-28',
+        :sub_enddate => '2013-09-28',
+        :sub_status => '1',
+        :sub_comment => 'test',
+
+         :accept_url => 'example.com/ogon/accept',
+         :decline_url => 'example.com/ogon/decline',
+         :exception_url => 'example.com/ogon/exception',
+         :cancel_url => 'example.com/ogon/cancel',
+
+        })%>
+
 ### Copyright
 Copyright &copy; 2012 Robin Houdmeyers. See LICENSE.txt for further details.
