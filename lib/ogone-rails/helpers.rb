@@ -69,6 +69,53 @@ module OgoneRails
         when :customer_phone
           form.add_input('ownertelno', value)
           hash.add_parameter 'ownertelno', value
+
+	  # --------------
+	  # Abo Parameters
+     when :subscription_id
+         form.add_input('SUBSCRIPTION_ID', value)
+          hash.add_parameter 'SUBSCRIPTION_ID', value
+
+     when :sub_amount
+          value = (value.to_f * 100).to_i
+          form.add_input('SUB_AMOUNT', value)
+          hash.add_parameter 'SUB_AMOUNT', value
+
+     when :sub_com
+          form.add_input('SUB_COM', value)
+          hash.add_parameter 'SUB_COM', value
+
+     when :sub_orderid
+          form.add_input('SUB_ORDERID', value)
+          hash.add_parameter 'SUB_ORDERID', value
+
+     when :sub_period_unit
+          form.add_input('SUB_PERIOD_UNIT', value)
+          hash.add_parameter 'SUB_PERIOD_UNIT', value
+
+     when :sub_period_number
+          form.add_input('SUB_PERIOD_NUMBER', value)
+          hash.add_parameter 'SUB_PERIOD_NUMBER', value
+
+     when :sub_period_moment
+          form.add_input('SUB_PERIOD_MOMENT', value)
+          hash.add_parameter 'SUB_PERIOD_MOMENT', value
+
+     when :sub_startdate
+          form.add_input('SUB_STARTDATE', value)
+          hash.add_parameter 'SUB_STARTDATE', value
+
+     when :sub_enddate
+          form.add_input('SUB_ENDDATE', value)
+          hash.add_parameter 'SUB_ENDDATE', value
+
+     when :sub_status
+          form.add_input('SUB_STATUS', value)
+          hash.add_parameter 'SUB_STATUS', value
+
+     when :sub_comment
+          form.add_input('SUB_COMMENT', value)
+          hash.add_parameter 'SUB_COMMENT', value
         
         
         # --------------
