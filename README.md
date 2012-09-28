@@ -133,7 +133,7 @@ Get parameters:
 	
 ### Helper use for Subscrioptions billing after every end of Month
 
-<%= ogone_form ({
+	<%= ogone_form ({
          :order_id => 123456,
          :amount => 2.99,
          :customer_name => 'Jan Jansdfsdfssen',
