@@ -31,6 +31,9 @@ module OgoneRails
         
         # ------------------
         # General parameters
+        when :template
+	  form.add_input('TP', value)
+       	  hash.add_parameter 'TP', value
         
         when :order_id
           form.add_input('orderID', value)
@@ -220,7 +223,7 @@ module OgoneRails
 
     
       def get_form
-        @form << "\t<input type='submit' value='ga verder naar ogones' id='submit2' name='submit2'>\n"
+        @form << "\t<input type='submit' value='Weiter zum Bezhaldienst' id='submit2' name='submit2' class='btn btn-custom2'>\n"
         @form << "</form>"
         @form.html_safe
       end
