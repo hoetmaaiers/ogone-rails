@@ -1,8 +1,8 @@
 module OgoneRails
   extend self
   
-  TEST_SERVICE_URL = 'https://secure.ogone.com/ncol/test/orderstandard.asp'
-  LIVE_SERVICE_URL = 'https://secure.ogone.com/ncol/prod/orderstandard.asp'  
+  TEST_SERVICE_URL = 'https://secure.ogone.com/ncol/test/orderstandard_utf8.asp'
+  LIVE_SERVICE_URL = 'https://secure.ogone.com/ncol/prod/orderstandard_utf8.asp'  
   STATUS_CODES = {
     0   => "Incomplete or invalid",
     1	  => "Cancelled by client",
