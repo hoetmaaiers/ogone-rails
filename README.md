@@ -2,11 +2,9 @@
 
 
 ##What is it
-
+<br/>
 A Ruby gem to simplify the use of [Ogone](http://www.ogone.com) online payments service.
 
-
-##Usage
 
 ### Installation
 	gem install ogone-rails
@@ -14,6 +12,17 @@ A Ruby gem to simplify the use of [Ogone](http://www.ogone.com) online payments 
 	gem 'ogone-rails'
 
 ### Configuration
+
+#### Use the generator
+		
+		rails generate ogone:config
+		
+This creates 2 files. Change te example configruation in **ogone.yml** to your own configuration.
+
+
+	
+#### or configure manually
+
 Define ogone parameters in a yaml config file:
 		
 		# config/ogone.yml
@@ -123,4 +132,4 @@ Get parameters:
 	}
 	
 ### Copyright
-Copyright &copy; 2012 Robin Houdmeyers
+Copyright &copy; 2012 Robin Houdmeyers. See LICENSE.txt for further details.

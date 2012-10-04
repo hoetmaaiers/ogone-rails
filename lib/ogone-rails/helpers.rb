@@ -3,11 +3,11 @@ module OgoneRails
   module Helpers
     extend self
 
-    def ogone_form options={}
+    def ogone_form options={}, html={}
       
       OgoneRails::mode == "live" ? action = OgoneRails::LIVE_SERVICE_URL : action = OgoneRails::TEST_SERVICE_URL
       
-      form = Form.new(action)
+      form = Form.new(action, html)
       hash = StringToHash.new
       
       # REQUIRED VALUES
@@ -156,9 +156,15 @@ module OgoneRails
   private
   
     class Form
-      def initialize action
+      def initialize action, options
         @form = ""
-        @form << "<form method='post' action='#{action}'>\n"
+        html_options = ""
+        options.each do |key, value|
+          html_options << "#{key}=\"#{value}\" "
+        end
+
+        @form << "<form method='post' action='#{action}' #{ html_options }>\n"
+        # @form << form_tag("action")
       end
     
       def add_input name, value
