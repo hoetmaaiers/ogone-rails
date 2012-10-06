@@ -39,6 +39,9 @@ module OgoneRails
     def get_params
       # return values in readable format
       @params = {
+	:alias => @request['ALIAS'],
+	:subscription_id => (@request['subscription_id']).to_i,
+	:create_status => @request['creation_status'],
         :order_id => (@request['orderID']).to_i,
         :amount => (@request['amount']).to_f,
         :currency => @request['currency'],
