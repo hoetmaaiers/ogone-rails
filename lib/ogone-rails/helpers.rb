@@ -8,10 +8,10 @@ module OgoneRails
       
       @form = Form.new(action, options)
       
-      form_content = yield(form_content)
+      ogone_form_content = yield(ogone_form_content)
       
       output = @form.form_tag
-      output << form_content
+      output << ogone_form_content
       output << "\n</form>"#.html_safe
       
       # block.methods
@@ -55,23 +55,25 @@ module OgoneRails
         :logo               => 'LOGO'       
       }
       
-      # Optional values
       options.each do |option, value|        
         if options_index.key?(option)
+          # ogone param
           value = (value.to_f * 100).to_i if option == :amount # amount in cents
           add_ogone_parameter(options_index[option], value)
         else
+          # custom param
           add_ogone_parameter(option.to_s, value)
         end
       end
       
-      # Shasign
+      # shasign
       @form.add_input('SHASign', @hash.generate_sha_in)
       
       # get form_fields
       @form.form_fields
     end
-
+    
+    # to support old method
     def ogone_form options={}, html={}
       ogone_form_tag(html) do
         output = ogone_fields(options)
@@ -79,6 +81,7 @@ module OgoneRails
       end
     end
     
+   
     private 
       
       # helper method to add params to Form and Hash
