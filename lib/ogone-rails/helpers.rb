@@ -31,7 +31,7 @@ module OgoneRails
 
                # ------------------
                # General parameters
-                      when :operation
+            when :operation
                form.add_input('OPERATION', value)
                hash.add_parameter 'OPERATION', value
 
@@ -199,6 +199,10 @@ module OgoneRails
             when :alias_usage
                form.add_input('ALIASUSAGE', value)
                hash.add_parameter 'ALIASUSAGE', value
+
+            when :com
+               form.add_input('COM', value)
+               hash.add_parameter 'COM', value
 
 
             else
