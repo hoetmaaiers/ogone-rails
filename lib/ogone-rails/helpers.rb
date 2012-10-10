@@ -8,10 +8,10 @@ module OgoneRails
       
       @form = Form.new(action, options)
       
-      ogone_form_content = yield(ogone_form_content)
+      form_content = yield(form_content)
       
       output = @form.form_tag
-      output << ogone_form_content
+      output << form_content
       output << "\n</form>"#.html_safe
       
       # block.methods
@@ -81,7 +81,6 @@ module OgoneRails
       end
     end
     
-   
     private 
       
       # helper method to add params to Form and Hash

@@ -2,9 +2,11 @@
 
 
 ##What is it
-<br/>
+
 A Ruby gem to simplify the use of [Ogone](http://www.ogone.com) online payments service.
 
+
+##Usage
 
 ### Installation
 	gem install ogone-rails
@@ -12,17 +14,6 @@ A Ruby gem to simplify the use of [Ogone](http://www.ogone.com) online payments 
 	gem 'ogone-rails'
 
 ### Configuration
-
-#### Use the generator
-		
-		rails generate ogone:config
-		
-This creates 2 files. Change te example configruation in **ogone.yml** to your own configuration.
-
-
-	
-#### or configure manually
-
 Define ogone parameters in a yaml config file:
 		
 		# config/ogone.yml
@@ -64,40 +55,82 @@ __optional__
 
 
 ### Helpers
-Generate an **ogone_form**:
+
+#### New syntax
+
+Generate an **ogone_form** whith the new syntax.
+
+
+**Full example**
+	
+	ogone_form_tag({:id => "form"}) do 
+		form_content = ogone_fields({  
+	        :parameter => value
+	        ...
+	      })
+	
+		# add custom submit
+		form_content << '<input type="submit" value="pay now" />'
+	end
+
+**ogone_form_tag** example
+	
+	ogone_form_tag({ :html_attribute => "value" }) do 
+		...
+		# everything in here must be in one variable
+		form_content = "…"
+		form_content << "…"		
+		...
+	end
+
+**ogone_fields** example
+
+Generate hidden input fields with ogone parameters.
+
+
+	ogone_fields({
+		:parameter => "value",
+		...
+	}
+
+#### Parameters
+
+      ogone_fields_options = {
+        # General parameters
+        :order_id           => 'orderID',
+        :amount             => 'amount',
+        :customer_name      => 'CN',
+        :customer_email     => 'EMAIL',
+        :customer_address   => 'owneraddress',
+        :customer_zip       => 'ownerZIP',
+        :customer_city      => 'ownertown',
+        :customer_country   => 'ownercty',
+        :customer_phone     => 'ownertelno',
+        # Feedback url's    
+        :accept_url         => 'accepturl',
+        :decline_url        => 'declineurl',
+        :exception_url      => 'exceptionurl',
+        :cancel_url         => 'cancelurl',
+        # Look and feel     
+        :title              => 'TITLE',
+        :bg_color           => 'BGCOLOR',
+        :text_color         => 'TXTCOLOR',
+        :table_bg_color     => 'TBLBGCOLOR',
+        :table_text_color   => 'TBLTXTCOLOR',
+        :button_bg_color    => 'BUTTONBGCOLOR',
+        :button_text_color  => 'BUTTONTXTCOLOR',
+        :font_family        => 'FONTTYPE',
+        :logo               => 'LOGO'       
+      }
+
+
+
+####No worry, old syntax is still enabled...
+
 
 	ogone_form({
-		#transaction information
-    	:order_id => 12345, 
-    	:amount => 299.99, 
-    	:customer_name => "Jan Janssen",
-    	:customer_email => "jan@email.com",
-   		:customer_address => "highstreet 101",
-   		:customer_zip => "1000",
-    	:customer_city => "Brussel",
-    	:customer_country => "Belgium",
-    	:customer_phone => "0412345678",
-    	
-    	# feedback url's
-    	:accept_url => "www.example.com/ogone/accept",
-    	:decline_url => "www.example.com/ogone/decline",
-    	:exception_url => "www.example.com/ogone/exception",
-    	:cancel_url => "www.example.com/ogone/cancel",
-    	
-    	# look and feel
-    	:title => "lorem ipsum",
-    	:bg_color => "FFFFFF",
-    	:text_color => "000000",
-    	:table_bg_color => "000000",
-    	:table_text_color => "000000",    	
-    	:button_bg_color => "CCCCCC",
-    	:button_text_color => "000000",
-    	:font_family => "Helvetica",
-    	:logo => "www.example.com/images/logo.png",
-    	
-    	# default ogone parameter
-    	'PARAM' => "example"
-   	})
+		:paramater => "value"
+   	}, { :html_attribute => "" })
 
 ### Check Ogone feedback
 
@@ -132,4 +165,4 @@ Get parameters:
 	}
 	
 ### Copyright
-Copyright &copy; 2012 Robin Houdmeyers. See LICENSE.txt for further details.
+Copyright &copy; 2012 Robin Houdmeyers
