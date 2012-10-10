@@ -2,15 +2,18 @@ module OgoneRails
 
   module Helpers
     extend self
-        
+
+    @hash
+    @form
+     
     def ogone_form_tag options={}
       OgoneRails::mode == "live" ? action = OgoneRails::LIVE_SERVICE_URL : action = OgoneRails::TEST_SERVICE_URL
       
-      @form = Form.new(action, options)
+      @form = Form.new
       
       form_content = yield(form_content)
       
-      output = @form.form_tag
+      output = @form.get_form_tag(action, options)
       output << form_content
       output << "\n</form>"#.html_safe
       
@@ -19,7 +22,8 @@ module OgoneRails
     end
     
     
-    def ogone_fields options={}
+    def ogone_fields options = {}
+      @form = Form.new
       @hash = StringToHash.new
       
       # Required values
