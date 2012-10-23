@@ -19,8 +19,8 @@ module OgoneRails
          form.add_input('currency', OgoneRails::currency)
          hash.add_parameter 'currency', OgoneRails::currency
          # language
-         form.add_input('language', OgoneRails::language)
-         hash.add_parameter 'language', OgoneRails::language
+         #form.add_input('language', OgoneRails::language)
+         #hash.add_parameter 'language', OgoneRails::language
 
 
 
@@ -34,7 +34,9 @@ module OgoneRails
             when :operation
                form.add_input('OPERATION', value)
                hash.add_parameter 'OPERATION', value
-
+            when :language
+               form.add_input('LANGUAGE', value)
+               hash.add_parameter 'LANGUAGE', value
 
             when :template
                form.add_input('TP', value)
