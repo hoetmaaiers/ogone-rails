@@ -146,22 +146,22 @@ Check valid authorization:
 
 Get parameters:
 	
-	@check.get_parameters
+	@check.get_params
 	
 … returns the Ogone feedback in a hash format. The keys are made more readable then Ogone provides them: …
 
 	{
-		"order_id" => 46185, 
-		"amount" => 299.38, 
-		"currency" => "EUR", 
-		"payment_method" => "CreditCard",
-		"acceptance" => "test123", 
-		"status" => "Authorized", 
-		"card_number" => "XXXXXXXXXXXX1111",
-		"pay_id" => "14838904", 
-		"error" => nil, 
-		"brand" => "VISA",
-		"sha_sign" => "51AF71351E79DD0186816289AD53C57213978E32"
+		:order_id => 46185, 
+		:amount => 299.38, 
+		:currency => "EUR", 
+		:payment_method => "CreditCard",
+		:acceptance => "test123", 
+		:status => "Authorized", 
+		:card_number => "XXXXXXXXXXXX1111",
+		:pay_id => "14838904", 
+		:error => nil, 
+		:brand => "VISA",
+		:sha_sign => "51AF71351E79DD0186816289AD53C57213978E32"
 	}
 	
 ### Copyright
