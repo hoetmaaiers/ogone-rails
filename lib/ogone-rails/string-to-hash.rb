@@ -19,14 +19,17 @@ module OgoneRails
       Digest::SHA1.hexdigest(@sha_in_phrase).upcase
     end
     
-    def generate_sha_out
-      
+    def get_string
+      string = ""
+      @params.each do |key, value|
+        string << "#{key}=#{value}"
+      end
     end
     
-    # unused since Module transformed to Class
-    def reset
-      @sha_in_phrase = ""
-      @params = {}
-    end
+    #-D unused since Module transformed to Class
+    #-D def reset
+    #-D   @sha_in_phrase = ""
+    #-D   @params = {}
+    #-D end
   end
 end
