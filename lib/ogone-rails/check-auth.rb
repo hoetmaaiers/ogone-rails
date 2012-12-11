@@ -4,6 +4,9 @@ module OgoneRails
     
     def initialize request
       @request = request.GET
+      # clear empty keys
+      @request.delete_if { |k,v| v.empty? }
+
       @params = {}
       get_params
     end
