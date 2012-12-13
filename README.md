@@ -32,7 +32,8 @@ Define ogone parameters in a yaml config file:
   			language: "nl_NL"
   			mode: 'live'
 
-Configure ogone-rails in an initializer:
+__Deprecated in version >= 0.1.3__, configure ogone-rails in an initializer:
+
 		
 		# initializers/ogone.rb
 		ogone_config = YAML.load_file('config/ogone.yml')[Rails.env].symbolize_keys
