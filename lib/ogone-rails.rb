@@ -16,13 +16,12 @@ module OgoneRails
 
 	class MissingConfiguration < NameError; end
 
-	def load!
+	def self.load!
 		load_config DEFAULT_CONFIG
 	end
 
-	def load_config config_path
+	def self.load_config config_path
 		exists = config_path && File.exists?(config_path)
-		return false if !exists
 		raise  MissingConfiguration, "Could not find the #{ config_path } configuration file" unless exists
 
 		# load ogone configuration
