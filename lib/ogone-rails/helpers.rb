@@ -72,7 +72,7 @@ module OgoneRails
       
       # shasign
       @form.add_input('SHASign', @hash.generate_sha_in)
-      
+
       # get form_fields
       @form.form_fields
     end
@@ -89,8 +89,14 @@ module OgoneRails
       
       # helper method to add params to Form and Hash
       def add_ogone_parameter name, value
+
+        # transliterate if available
+        value = ActiveSupport::Inflector.transliterate("#{value}")
+
         @form.add_input(name, value)
         @hash.add_parameter(name.to_s, value)
       end
   end
 end
+
+
