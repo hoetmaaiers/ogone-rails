@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module OgoneRails
   class Form
     attr_reader :form_tag, :form_fields

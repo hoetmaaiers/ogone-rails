@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 module OgoneRails
   class StringToHash
     attr_accessor :sha_in_phrase
