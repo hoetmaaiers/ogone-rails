@@ -43,7 +43,7 @@ module OgoneRails
     def get_params
       # return values in readable format
       @params = {
-        :order_id => (@request['orderID']).to_i,
+        :order_id => (@request['orderID']),
         :amount => (@request['amount']).to_f,
         :currency => @request['currency'],
         :payment_method => @request['PM'],
