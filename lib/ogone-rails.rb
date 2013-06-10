@@ -11,8 +11,8 @@ require 'ogone-rails/check-auth'
 
 
 module OgoneRails
-	APP_ROOT     = File.expand_path((defined?(Rails) && Rails.root.to_s.length > 0) ? Rails.root : ENV['RAILS_ROOT'] || '.') unless defined?(APP_ROOT)
-	DEFAULT_CONFIG = File.join( APP_ROOT, 'config', 'ogone.yml')
+	ASSET_ROOT     = File.expand_path((defined?(Rails) && Rails.root.to_s.length > 0) ? Rails.root : ENV['RAILS_ROOT'] || '.') unless defined?(ASSET_ROOT)
+	DEFAULT_CONFIG = File.join( ASSET_ROOT, 'config', 'ogone.yml')
 
 	class MissingConfiguration < NameError; end
 
