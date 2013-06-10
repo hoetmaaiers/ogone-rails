@@ -9,6 +9,6 @@ group :development do
   gem "shoulda", ">= 0"
   gem "rdoc", "~> 3.12"
   gem "bundler"#, "~> 1.1.3"
-  gem "jeweler", git: "git@github.com:emilsoman/jeweler.git"
+  gem "jeweler"#, git: "git@github.com:emilsoman/jeweler.git"
   # gem "rcov", ">= 0"
 end

@@ -21,11 +21,16 @@ module OgoneRails
 	end
 
 	def self.load_config config_path
+		puts "loading config FROM #{config_path}"
+		
 		exists = config_path && File.exists?(config_path)
 		raise  MissingConfiguration, "Could not find the #{ config_path } configuration file" unless exists
 
+		# deprecated RAILS_ENV won't get hurt this way
+		environment = Rails.env.split('=').last
+
 		# load ogone configuration
-		config = YAML.load_file(DEFAULT_CONFIG)[Rails.env].symbolize_keys
+		config = YAML.load_file(DEFAULT_CONFIG)[environment].symbolize_keys
 		OgoneRails::config (config)
 	end
 end
