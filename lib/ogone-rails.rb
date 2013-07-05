@@ -20,9 +20,7 @@ module OgoneRails
 		load_config DEFAULT_CONFIG
 	end
 
-	def self.load_config config_path
-		puts "loading config FROM #{config_path}"
-		
+	def self.load_config config_path	
 		exists = config_path && File.exists?(config_path)
 		raise  MissingConfiguration, "Could not find the #{ config_path } configuration file" unless exists
 
