@@ -33,6 +33,10 @@ module OgoneRails
       add_ogone_parameter('language', OgoneRails::language)
       
       options_index = {
+        # Override default params
+        :currency           => 'currency',
+        :pspid              => 'PSPID',
+        :language           => 'language',
         # General params
         :order_id           => 'orderID',
         :amount             => 'amount',

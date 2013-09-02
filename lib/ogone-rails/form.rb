@@ -4,7 +4,7 @@ module OgoneRails
     attr_reader :form_tag, :form_fields
     
     def initialize
-      @form_fields = ""
+      @form_fields = {}
     end
     
     def get_form_tag action = "", options = {}      
@@ -18,7 +18,16 @@ module OgoneRails
     end
     
     def add_input name, value
-      @form_fields << "\t<input type='hidden' name='#{name}' value='#{value}' />\n"
+      @form_fields[name] = value
     end
+
+    def form_fields
+      fields = ""
+      @form_fields.each do |key, value|
+        fields << "\t<input type='hidden' name='#{key}' value='#{value}' />\n"  
+      end
+      fields
+    end
+
   end
 end
