@@ -99,7 +99,9 @@ module OgoneRails
         value = ActiveSupport::Inflector.transliterate("#{value}")
 
         @form.add_input(name, value)
-        @hash.add_parameter(name.to_s, value)
+        if !value.empty?
+          @hash.add_parameter(name.to_s, value)
+        end
       end
   end
 end
