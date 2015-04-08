@@ -67,7 +67,7 @@ module OgoneRails
       options.each do |option, value|        
         if options_index.key?(option)
           # ogone param
-          value = (value.to_f * 100).to_i if option == :amount # amount in cents
+          value = (BigDecimal.new(value.to_s) * 100).to_i if option == :amount # amount in cents
           add_ogone_parameter(options_index[option], value)
         else
           # custom param
