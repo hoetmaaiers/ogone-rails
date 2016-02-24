@@ -5,7 +5,8 @@ development:
   currency: "EUR"
   language: "nl_NL"
   mode: 'test'
-  
+  encoding: 'ISO-8859-1'
+
 test:
   pspid: "example"
   sha_in: "0123456789abcdefghijklmnopqrstuv"
@@ -13,7 +14,8 @@ test:
   currency: "EUR"
   language: "nl_NL"
   mode: 'test'
-  
+  encoding: 'ISO-8859-1'
+
 production:
   pspid: "example"
   sha_in: "0123456789abcdefghijklmnopqrstuv"
@@ -21,3 +23,4 @@ production:
   currency: "EUR"
   language: "nl_NL"
   mode: 'live'
+  encoding: 'ISO-8859-1'

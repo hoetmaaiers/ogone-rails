@@ -8,21 +8,19 @@ module OgoneRails
     @form
      
     def ogone_form_tag options={}
-      OgoneRails::mode == "live" ? action = OgoneRails::LIVE_SERVICE_URL : action = OgoneRails::TEST_SERVICE_URL
-      
+
       @form = Form.new
       
       form_content = yield(form_content)
       
-      output = @form.get_form_tag(action, options)
+      output = @form.get_form_tag(get_service_url, options)
       output << form_content
       output << "\n</form>"#.html_safe
       
       # block.methods
       output.html_safe
     end
-    
-    
+
     def ogone_fields options = {}
       @form = Form.new
       @hash = StringToHash.new
@@ -103,6 +101,15 @@ module OgoneRails
           @hash.add_parameter(name.to_s, value)
         end
       end
+
+      def get_service_url
+        if OgoneRails::mode == "live"
+          OgoneRails::encoding == "UTF-8" ? OgoneRails::LIVE_SERVICE_URL_UTF8 : OgoneRails::LIVE_SERVICE_URL_ISO
+        else
+          OgoneRails::encoding == "UTF-8" ? OgoneRails::TEST_SERVICE_URL_UTF8 : OgoneRails::TEST_SERVICE_URL_ISO
+        end
+      end
+
   end
 end
 
