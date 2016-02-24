@@ -24,6 +24,7 @@ Define ogone parameters in a yaml config file:
   			currency: "EUR"
   			language: "nl_NL"
   			mode: 'test'
+  			encoding: 'ISO-8859-1'
   		production:
   			pspid: "hoetmaaiers"
   			sha_in: "0123456789abcdefghijklmnopqrstuv"
@@ -31,6 +32,7 @@ Define ogone parameters in a yaml config file:
   			currency: "EUR"
   			language: "nl_NL"
   			mode: 'live'
+  			encoding: 'ISO-8859-1'
 
 __Deprecated in version >= 0.1.3__, configure ogone-rails in an initializer:
 

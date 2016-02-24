@@ -2,8 +2,12 @@
 module OgoneRails
   extend self
   
-  TEST_SERVICE_URL = 'https://secure.ogone.com/ncol/test/orderstandard.asp'
-  LIVE_SERVICE_URL = 'https://secure.ogone.com/ncol/prod/orderstandard.asp'  
+  TEST_SERVICE_URL_ISO = 'https://secure.ogone.com/ncol/test/orderstandard.asp'
+  TEST_SERVICE_URL_UTF8 = 'https://secure.ogone.com/ncol/test/orderstandard_utf8.asp'
+
+  LIVE_SERVICE_URL_ISO = 'https://secure.ogone.com/ncol/prod/orderstandard.asp'
+  LIVE_SERVICE_URL_UTF8 = 'https://secure.ogone.com/ncol/prod/orderstandard_utf8.asp'
+
   STATUS_CODES = {
     0   => "Incomplete or invalid",
     1	  => "Cancelled by client",
@@ -50,10 +54,10 @@ module OgoneRails
   @sha_out  = nil
   @currency = "EUR"
   @language = "nl_NL"
-  @mode    = "live"
-  
+  @mode     = "live"
+  @encoding = "ISO-8859-1" # Default to ISO for backwards compatibility
+
   def config c
-    
     c.each do |key, value|
       case key
       when :pspid
@@ -68,6 +72,8 @@ module OgoneRails
         @language = value unless value.nil?
       when :mode
         @mode = value unless value.nil?
+      when :encoding
+        @encoding = value unless value.nil?
       end
     end
   end
@@ -96,4 +102,9 @@ module OgoneRails
   def self.mode
     @mode
   end
+
+  def self.encoding
+    @encoding.upcase
+  end
+
 end
