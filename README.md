@@ -1,12 +1,12 @@
-#Ogone for Rails
+# Ogone for Rails
 
 
-##What is it
+## What is it
 
 A Ruby gem to simplify the use of [Ogone](http://www.ogone.com) online payments service.
 
 
-##Usage
+## Usage
 
 ### Installation
 	gem install ogone-rails
@@ -128,7 +128,7 @@ Generate hidden input fields with ogone parameters.
 
 
 
-####No worry, old syntax is still enabled...
+#### No worries, old syntax is still availlable...
 
 
 	ogone_form({
